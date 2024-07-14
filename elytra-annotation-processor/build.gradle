@@ -1,0 +1,33 @@
+plugins {
+    // Apply the java-library plugin for API and implementation separation.
+    id 'fr.elytra.java-conventions'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+
+        // As of Gradle 5.1, you can limit this to only those
+        // dependencies you expect from it
+        content {
+        includeGroup 'org.bukkit'
+        includeGroup 'org.spigotmc'
+        }
+    }
+    
+}
+
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    // https://mvnrepository.com/artifact/org.ow2.asm/asm
+    implementation group: 'org.ow2.asm', name: 'asm', version: '9.7'
+    implementation project(':elytra-dependency-injection')
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}

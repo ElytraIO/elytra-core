@@ -1,0 +1,7 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "disabled",
+    "yaml.schemas": {
+        "https://json.schemastore.org/bukkit-plugin.json": "file:///e%3A/Projects/Elytra/elytra/elytra-test-plugins/simple-bukkit-plugin/build/generated/sources/annotationProcessor/java/main/resources/plugin.yml"
+    }
+}

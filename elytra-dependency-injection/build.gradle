@@ -1,0 +1,22 @@
+plugins {
+    // Apply the java-library plugin for API and implementation separation.
+    id 'fr.elytra.java-conventions'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    // Use JUnit Jupiter for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    implementation group: 'org.ow2.asm', name: 'asm', version: '9.7'
+    implementation "com.google.guava:guava:33.2.1-jre"
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
